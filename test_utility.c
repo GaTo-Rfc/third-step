@@ -6,7 +6,7 @@
 // プロトタイプ宣言
 int calc_ttl(int *);               // 合計計算
 float calc_avg(int *);             // 平均計算
-void calc_dev_val(int *, float *); // 偏差値計算
+void calc_dev_val(int *, float *); // 偏差計算
 float calc_dist(float *);          // 分散計算
 float calc_std_dev(float *);       // 標準偏差計算
 void swap(int *, int *);           // スワップ（バブルソート用）
@@ -47,7 +47,7 @@ float calc_avg(int *points)
   return calc_ttl(points) / (float)SIZE;
 }
 
-// 偏差値計算
+// 偏差計算
 void calc_dev_val(int *points, float *dev_vals)
 {
   // 平均を取得
@@ -128,7 +128,7 @@ void print(int *points)
   calc_dev_val(points, dev_vals);
   for (size_t i = 0; i < SIZE; i++)
   {
-    printf("%.2lf, ", dev_vals[i]);
+    printf("%.2lf, ", dev_vals[i] + 50.0);
   }
   printf("\n");
 
